@@ -540,7 +540,7 @@ def countries_query(kwargs):
         else:
             statement+=avg_rating_statement+join_statement+group_statement+order_rating_statement+'DESC LIMIT 10 '
 
-    print(statement)
+    #print(statement)
     # Connect to big10 database
     conn = sqlite3.connect(DBNAME)
     cur = conn.cursor()
@@ -775,3 +775,7 @@ def interactive_prompt():
 #Make sure nothing runs or prints out when this file is run as a module
 if __name__=="__main__":
     interactive_prompt()
+
+
+if __name__!="__main__":
+    print('Please run main file before test file to populate the databases')
